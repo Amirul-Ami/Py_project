@@ -1,0 +1,9 @@
+'''Factional combination n!
+(here the code i made for claculating Factional combination)
+'''
+times = int(input('type n! Number hear____'))
+value = times
+
+for i in range(1, times):
+    value =  i * value
+print('Your value is '+ str(value))
