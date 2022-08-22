@@ -1,0 +1,61 @@
+import random, sys
+
+def game2(AnsNumber, name):
+    n = 0   # Tries number
+    while True:
+        print('Take a guess.')
+        Number = int(input())   # This is Guess number.
+        if Number < AnsNumber:
+            print('You guess is too low.')
+            n = n+1
+            continue
+        elif Number > AnsNumber:
+            print('You guess is too high.')
+            n = n+1
+            continue
+        else:
+            n = n+1
+            print(f'Good job {name}! You guess my number in {n} guesses!')
+            break
+    return n
+            
+            
+
+Game_range = 100
+
+AnsNumber1 = random.randint(1,Game_range)  # This is answer number
+print()
+
+print('This is two player game. First Type your name and start to play :)')
+
+name = input('Type your name...')
+print()
+print(f'Hi {name}, I am thinking of a number 1 to {Game_range}.')
+
+Player1 = game2(AnsNumber1, name)
+
+AnsNumber2 = random.randint(1,Game_range)  # This is answer number
+print()
+
+print('Now try second player, First type your name...')
+name2 = input('Type your name...')
+print(f'Hi {name2}, I am thinking of a number 1 to {Game_range}.')
+
+Player2 = game2(AnsNumber2, name2)
+
+print()
+
+
+if Player1 < Player2:
+    print(f'{name} you won...')
+elif Player1 > Player2:
+    print(f'{name2} you won...')
+else:
+    print('Match draw.')
+
+
+print()
+print('.....Game over.....')
+print()
+
+sys.exit()
